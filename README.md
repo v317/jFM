@@ -12,3 +12,5 @@ Edit the font etc. to your liking and there you have it, song displaying on your
 
 If you wish to build yourself, source is available. It's bubble gum fixed right now but works just great.
 Enjoy!
+
+![Screenshot](https://cdn.discordapp.com/attachments/1026096438297514084/1051435435479543808/screnshot1.png)
