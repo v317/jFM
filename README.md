@@ -2,7 +2,8 @@
 Display what you are listening to on OBS using jFM!
 
 jFM uses Last.FM to grab what you are listening to, so you can use any player you like with Last.fm support.
-Signup for Last.FM account and enter the your account details to your music player, or addon if such is required to use Last.fm scrobbling.
+Signup for Last.FM account and enter the your account details to your music player, or addon if such is required to use Last.fm scrobbling. 
+jFM does NOT play your music!
 
 Once you have Last.fm account and scobbling up and running, enter your username to jFM and push 'Sync' button.
 The song you are listening to can be found from "nowplaying.txt" located in the jFM directory.
