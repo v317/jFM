@@ -146,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="jfmbeta.ico" />
-    <None Include="Resources\noisia_colorbars400.gif" />
     <None Include="Resources\ice.png" />
     <None Include="Resources\darkblue.png" />
     <None Include="Resources\beta1.png" />

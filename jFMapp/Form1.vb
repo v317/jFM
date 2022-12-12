@@ -61,6 +61,8 @@ Public Class Form1
             Dim ArtistName As String = currentlyPlayingNode.SelectSingleNode("artist").InnerText
             Dim currentlyPlayingSong As String = currentlyPlayingNode.SelectSingleNode("name").InnerText
             Dim AlbumArt As String = currentlyPlayingNode.SelectSingleNode("image[@size='medium']").InnerText
+            Dim songURL As String = currentlyPlayingNode.SelectSingleNode("url").InnerText
+
             PictureBox1.Load(AlbumArt)
             'Convert to UTF-8 to support more languages!
             Dim play As String = " " & ArtistName & " - " & currentlyPlayingSong & " "
@@ -79,33 +81,16 @@ Public Class Form1
         End Try
     End Sub
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-        MsgBox("jFM by Alt - Beta 1" & Environment.NewLine & Environment.NewLine &
+        MsgBox("jFM by Alt - Beta 2" & Environment.NewLine & Environment.NewLine &
                "jFM requires you to have free Last.FM account to work." & Environment.NewLine & "Also your music player needs to support Last.FM scrobbling, like Spotify." & Environment.NewLine & Environment.NewLine &
-               "After pushing 'Sync' button, jFM will sync automatically every few seconds and writes what is playing to nowplaying.txt located in the jFM directory!" & Environment.NewLine & Environment.NewLine &
-               "If you need more detailed instructions, visit jFM website at https://sacredrift.com/jfm", MsgBoxStyle.Information, "About jFM")
+               "Enter your username to jFM and affter pushing 'Sync' button, data will sync automatically every few seconds and what is playing can be found in nowplaying.txt located in the jFM directory!" & Environment.NewLine & Environment.NewLine &
+               "If you need more detailed instructions, visit jFM Git https://github.com/v317/jFM", MsgBoxStyle.Information, "About jFM")
     End Sub
 
-    Private Sub jFMUsername_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles jFMUsername.MouseDoubleClick
-        If jFMUsername.Enabled = False Then
-            jFMUsername.Enabled = True
+    Private Sub jFMUsername_DoubleClick(sender As Object, e As EventArgs) Handles jFMUsername.DoubleClick
+        If jFMUsername.Text = "" Then
         Else
-            jFMUsername.Enabled = False
+            Process.Start("https://www.last.fm/user/" & jFMUsername.Text)
         End If
-    End Sub
-
-    Private Sub PictureBox2_DoubleClick(sender As Object, e As EventArgs) Handles midbar.DoubleClick
-        midbar.Image = My.Resources.noisia_colorbars400
-    End Sub
-
-    Private Sub bottombar_DoubleClick(sender As Object, e As EventArgs) Handles bottombar.DoubleClick
-        bottombar.Image = My.Resources.noisia_colorbars400
-    End Sub
-
-    Private Sub midbar_Click(sender As Object, e As EventArgs) Handles midbar.Click
-        midbar.Image = My.Resources.ice
-    End Sub
-
-    Private Sub bottombar_Click(sender As Object, e As EventArgs) Handles bottombar.Click
-        bottombar.Image = My.Resources.ice
     End Sub
 End Class
